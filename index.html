@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <h1 class="title">Wavely</h1>
+
+  <div class="player">
+    <div class="cover">
+      <img id="cover" src="assets/cover1.jpg" alt="Album Cover">
+    </div>
+    <h2 id="title">Lost in Japan</h2>
+    <h3 id="artist">Shawn Mendes</h3>
+
+    <audio id="audio" src="assets/track1.mp3"></audio>
+
+    <div class="controls">
+      <button id="prev"><span>&#9664;&#9664;</span></button>
+      <button id="play"><span>&#9654;</span></button>
+      <button id="next"><span>&#9654;&#9654;</span></button>
+    </div>
+
+    <div class="volume-control">
+  <label for="volume">🔊</label>
+  <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+</div>
+
+
+    <div class="progress-container">
+      <span id="current-time">0:00</span>
+      <div class="progress-bar" id="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <span id="duration">0:00</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

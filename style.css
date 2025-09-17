@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom right, #2c3e50, #3498db);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.player {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.cover img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+h2 {
+  font-size: 20px;
+  margin: 10px 0 5px;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.controls button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: white;
+  color: #3498db;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  flex: 1;
+  background: rgba(255,255,255,0.3);
+  height: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress {
+  background: #fff;
+  height: 100%;
+  width: 0;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+#current-time, #duration {
+  font-size: 12px;
+}
+
+.title {
+  position: absolute;
+  top: 40px;
+  left: 46%;
+  transform: translateX(-60%); /* <-- was -50%, then -55% — now -60% */
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Pacifico', cursive;
+  animation: wave 2s infinite ease-in-out;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.volume-control input[type="range"] {
+  width: 100px;
+  accent-color: white; /* or a color that fits your theme */
+}
+
+
+
+
+/* Wavy text animation */
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+const audio = document.getElementById('audio');
+const volumeSlider = document.getElementById('volume');
+
+volumeSlider.addEventListener('input', function () {
+  audio.volume = volumeSlider.value;
+});
+
+
